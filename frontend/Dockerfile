@@ -8,6 +8,10 @@ RUN npm run build
 
 # Tahap 2: Production (Nginx)
 FROM nginx:stable-alpine
+# Copy hasil build ke folder Nginx
 COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Copy file konfigurasi Nginx kita tadi
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
