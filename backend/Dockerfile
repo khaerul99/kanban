@@ -11,4 +11,4 @@ RUN npx prisma generate
 
 EXPOSE 5000
 
-CMD ["npx", "ts-node", "src/index.ts"]
+CMD ["node", "--loader", "ts-node/esm", "src/index.ts"]
