@@ -2,7 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ] # Jalan otomatis saat kamu push ke branch main
+    branches: [ main ] 
 
 jobs:
   build-and-push:
@@ -11,7 +11,7 @@ jobs:
       - name: Checkout kode dari GitHub
         uses: actions/checkout@v4
 
-      - name: Login ke Docker Hub (Tempat simpan hasil bungkus)
+      - name: Login ke Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
@@ -23,7 +23,7 @@ jobs:
         with:
           context: ./backend
           push: true
-          tags: username-kamu/backend:latest
+          tags: khaerulrijall/backend:latest
 
       # Robot membungkus Frontend
       - name: Build & Push Frontend
@@ -31,4 +31,4 @@ jobs:
         with:
           context: ./frontend
           push: true
-          tags: username-kamu/frontend:latest
+          tags: khaerulrijall/frontend:latest
