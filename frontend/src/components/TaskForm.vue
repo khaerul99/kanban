@@ -32,19 +32,17 @@ const handleAdd = () => {
       <div
         class="flex items-center gap-2 w-full md:w-auto border-t md:border-t-0 md:border-l border-slate-700/50 pt-2 md:pt-0 md:pl-4"
       >
-        <div class="relative flex-1 md:w-40">
+        <div class="flex-1 md:w-44">
           <input
             type="date"
             v-model="dueDate"
-            placeholder="Tanggal jatuh tempo"
-            class="w-full bg-slate-700/50 text-slate-200 placeholder:text-slate-100 text-xs rounded-lg px-3 py-2.5 outline-none border border-slate-600 appearance-none"
-            style="min-width: 120px"
+            class="custom-date-input w-full bg-slate-700 text-white text-[12px] rounded-lg px-2 py-2.5 outline-none border border-slate-600 appearance-none block"
           />
         </div>
 
         <button
           type="submit"
-          class="flex-1 md:flex-none bg-sky-600 hover:bg-sky-500 text-white px-6 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap"
+          class="flex-1 md:flex-none bg-sky-600 hover:bg-sky-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap"
         >
           Tambah
         </button>
