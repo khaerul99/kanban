@@ -36,7 +36,8 @@ const handleAdd = () => {
           <input
             type="date"
             v-model="dueDate"
-            class="custom-date-input w-full bg-slate-700 text-white text-[12px] rounded-lg px-2 py-2.5 outline-none border border-slate-600 appearance-none block"
+            placeholder="Pilih Tanggal"
+            class="mobile-date-fix w-full bg-slate-700/80 text-white text-[13px] rounded-xl px-3 py-3 outline-none border border-slate-600 appearance-none block"
           />
         </div>
 
@@ -58,16 +59,12 @@ const handleAdd = () => {
 
 <style scoped>
 input[type="date"] {
-  min-height: 40px; 
+  min-height: 40px;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  filter: invert(0.8) sepia(100%) saturate(500%) hue-rotate(170deg);
-  cursor: pointer;
-}
 .custom-date-input {
-  min-height: 42px; 
-  color-scheme: dark; 
+  min-height: 42px;
+  color-scheme: dark;
 }
 
 input[type="date"]::-webkit-inner-spin-button,
@@ -76,18 +73,50 @@ input[type="date"]::-webkit-clear-button {
   -webkit-appearance: none;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  background-color: transparent;
-  filter: invert(1); 
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-}
 
 @media (max-width: 768px) {
   .custom-date-input {
-    font-size: 14px !important; 
+    font-size: 14px !important;
   }
 }
 
+.mobile-date-fix {
+  min-height: 44px !important; 
+  color: white !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative;
+  -webkit-appearance: none; 
+}
+
+input[type="date"]::before {
+  content: attr(placeholder);
+  width: 100%;
+  color: #94a3b8;
+}
+
+input[type="date"]:focus::before,
+input[type="date"]:valid::before {
+  content: "";
+  display: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: invert(1);
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  input[type="date"] {
+    font-size: 14px !important;
+    padding-left: 12px !important;
+  }
+}
 </style>
