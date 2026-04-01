@@ -207,7 +207,7 @@ const formatDate = (date: string) => {
 
             <button
               @click="handledeleteSubTask(sub.id)"
-              class="text-slate-600 hover:text-red-400 opacity-0 group-hover/sub:opacity-100 transition-all p-1 cursor-pointer"
+              class="text-red-400 lg:text-slate-600 hover:text-red-400 opacity-0 group-hover/sub:opacity-100 transition-all p-1 cursor-pointer"
               title="Hapus item"
             >
               <svg
