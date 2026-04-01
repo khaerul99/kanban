@@ -3,6 +3,7 @@ import draggable from "vuedraggable";
 import type { Task } from "../types/task";
 import { useTaskStore } from "../stores/task.store";
 import TaskCard from "./TaskCard.vue";
+import { ref, watch } from 'vue';
 
 const props = defineProps<{
   title: string;
@@ -11,6 +12,12 @@ const props = defineProps<{
 }>();
 
 const taskStore = useTaskStore();
+
+const localTasks = ref([...props.tasks]);
+
+watch(() => props.tasks, (newTasks) => {
+  localTasks.value = [...newTasks];
+}, { deep: true });
 
 const onMove = (evt: any) => {
   if (evt.added) {
@@ -35,7 +42,7 @@ const onMove = (evt: any) => {
     </div>
 
     <draggable 
-      v-model="tasks" 
+      v-model="localTasks" 
       group="tasks" 
       item-key="id"
       :animation="250"
