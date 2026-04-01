@@ -57,13 +57,37 @@ const handleAdd = () => {
 </template>
 
 <style scoped>
-/* Menghilangkan border default date picker di beberapa browser mobile */
 input[type="date"] {
-  min-height: 40px; /* Agar enak di-tap jari */
+  min-height: 40px; 
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
   filter: invert(0.8) sepia(100%) saturate(500%) hue-rotate(170deg);
   cursor: pointer;
 }
+.custom-date-input {
+  min-height: 42px; 
+  color-scheme: dark; 
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-clear-button {
+  display: none;
+  -webkit-appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-color: transparent;
+  filter: invert(1); 
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .custom-date-input {
+    font-size: 14px !important; 
+  }
+}
+
 </style>
