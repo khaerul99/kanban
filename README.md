@@ -1,7 +1,7 @@
 # 🚀 Kanban Task Management (Fullstack)
 
 <p align="center">
-  <!-- <img src="./frontend/src/assets/logo.png" alt="Kanban App Logo" width="80px"> -->
+ <img width="1919" height="990" alt="Image" src="https://github.com/user-attachments/assets/d65eeb6c-ee06-4a61-a6b2-ef6402f0e7c2" />
   <br>
   <b>A modern, responsive Kanban board to organize your projects and expenses.</b>
   <br>
@@ -35,7 +35,7 @@ Proyek ini menggunakan arsitektur modern yang memisahkan tanggung jawab antara F
 
 ### High-Level Architecture Diagram
 <p align="center">
-  <img width="1919" height="990" alt="Image" src="https://github.com/user-attachments/assets/d65eeb6c-ee06-4a61-a6b2-ef6402f0e7c2" />
+  <img width="1080" height="1350" alt="Image" src="https://github.com/user-attachments/assets/b6e1585d-ab7c-4023-8aa7-98476e52a5df" />
 </p>
 
 ### Technologies Used
