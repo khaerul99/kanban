@@ -11,6 +11,8 @@ const props = defineProps<{
   tasks: Task[];
 }>();
 
+const isMobile = ref(window.innerWidth < 1024);
+
 const taskStore = useTaskStore();
 
 const localTasks = ref([...props.tasks]);
@@ -43,6 +45,7 @@ const onMove = (evt: any) => {
 
     <draggable 
       v-model="localTasks" 
+      :disabled="isMobile"
       group="tasks" 
       item-key="id"
       :animation="250"

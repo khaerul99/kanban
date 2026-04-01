@@ -246,6 +246,18 @@ const formatDate = (date: string) => {
           ID: {{ task.id.slice(-5) }}
         </span>
 
+        <div class="lg:hidden flex items-center gap-2">
+          <select 
+            :value="task.status"
+            @change="(e) => taskStore.updateTaskStatus(task.id, (e.target as HTMLSelectElement).value as 'TODO' | 'IN_PROGRESS' | 'DONE')"
+            class="bg-slate-900 border border-slate-700 text-[10px] text-slate-300 rounded px-1 py-0.5 outline-none focus:border-sky-500"
+          >
+            <option value="TODO">TO DO</option>
+            <option value="IN_PROGRESS">IN PROGRESS</option>
+            <option value="DONE">FINISHED</option>
+          </select>
+        </div>
+
         <span
           :class="[
             'text-[9px] px-2.5 py-0.5 rounded-md font-bold uppercase tracking-widest',
