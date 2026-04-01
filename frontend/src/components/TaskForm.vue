@@ -17,106 +17,63 @@ const handleAdd = () => {
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto w-full px-4 md:px-0">
-    <form
-      @submit.prevent="handleAdd"
-      class="relative flex flex-col md:flex-row bg-slate-800/40 border-2 border-slate-700/50 rounded-2xl p-2 transition-all focus-within:border-sky-500"
-    >
-      <input
-        v-model="title"
-        type="text"
-        placeholder="Ketik tugas baru..."
-        class="flex-1 bg-transparent px-4 py-3 outline-none placeholder:text-slate-600 text-slate-100 text-sm"
-      />
+  <div class="max-w-2xl mx-auto w-full px-4">
+    <form @submit.prevent="handleAdd" class="flex flex-col gap-3">
+      
+      <div class="relative group">
+        <input 
+          v-model="title"
+          type="text" 
+          placeholder="Ketik tugas baru..." 
+          class="w-full bg-slate-800/60 border-2 border-slate-700/50 rounded-2xl px-5 py-4 text-slate-100 outline-none focus:border-sky-500 focus:ring-4 focus:ring-sky-500/10 transition-all shadow-lg"
+        />
+      </div>
 
-      <div
-        class="flex items-center gap-2 w-full md:w-auto border-t md:border-t-0 md:border-l border-slate-700/50 pt-2 md:pt-0 md:pl-4"
-      >
-        <div class="flex-1 md:w-44">
-          <input
-            type="date"
-            v-model="dueDate"
-            placeholder="Pilih Tanggal"
-            class="mobile-date-fix w-full bg-slate-700/80 text-white text-[13px] rounded-xl px-3 py-3 outline-none border border-slate-600 appearance-none block"
+      <div class="flex items-center gap-3">
+        
+        <div class="relative flex-1 group">
+          <div class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <input 
+            type="date" 
+            v-model="dueDate" 
+            class="w-full bg-slate-800/80 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-xs font-bold text-sky-400 uppercase tracking-wider outline-none appearance-none cursor-pointer focus:border-sky-500"
           />
+          <span v-if="!dueDate" class="absolute left-10 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 pointer-events-none uppercase font-bold">Set Deadline</span>
         </div>
 
-        <button
+        <button 
           type="submit"
-          class="flex-1 md:flex-none bg-sky-600 hover:bg-sky-500 text-white px-5 py-2.5 rounded-xl font-bold text-sm whitespace-nowrap"
+          class="bg-sky-600 hover:bg-sky-500 text-white px-8 py-3 rounded-xl font-black text-xs uppercase tracking-widest shadow-xl shadow-sky-500/20 active:scale-95 transition-all"
         >
           Tambah
         </button>
       </div>
     </form>
-
-    <p class="text-[10px] text-slate-500 mt-2 ml-2 italic">
-      Tips: Tekan <span class="text-slate-400 font-bold">Enter</span> untuk
-      menambah cepat.
+    
+    <p class="text-[10px] text-slate-600 mt-3 ml-2 flex items-center gap-1">
+      <span class="w-1 h-1 bg-slate-600 rounded-full"></span>
+      Tekan <span class="text-slate-400 font-bold">Enter</span> untuk menambah cepat.
     </p>
   </div>
 </template>
 
 <style scoped>
 input[type="date"] {
-  min-height: 40px;
-}
-
-.custom-date-input {
-  min-height: 42px;
-  color-scheme: dark;
-}
-
-input[type="date"]::-webkit-inner-spin-button,
-input[type="date"]::-webkit-clear-button {
-  display: none;
-  -webkit-appearance: none;
-}
-
-
-@media (max-width: 768px) {
-  .custom-date-input {
-    font-size: 14px !important;
-  }
-}
-
-.mobile-date-fix {
-  min-height: 44px !important; 
-  color: white !important;
-  display: flex !important;
-  align-items: center !important;
-  position: relative;
-  -webkit-appearance: none; 
-}
-
-input[type="date"]::before {
-  content: attr(placeholder);
-  width: 100%;
-  color: #94a3b8;
-}
-
-input[type="date"]:focus::before,
-input[type="date"]:valid::before {
-  content: "";
-  display: none;
+  color-scheme: dark; 
+  min-height: 48px;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0; 
   position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  filter: invert(1);
-  opacity: 1;
-  width: 20px;
-  height: 20px;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   cursor: pointer;
-}
-
-@media screen and (max-width: 768px) {
-  input[type="date"] {
-    font-size: 14px !important;
-    padding-left: 12px !important;
-  }
 }
 </style>
