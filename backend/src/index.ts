@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import taskRoutes from './routes/task.routes.js';
+import router from './routes/index.js';
 
 const app = express();
 
@@ -8,8 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Routes
-app.use('/tasks', taskRoutes);
+app.use('/api', router);
 
 // Health Check
 app.get('/', (req, res) => res.send('API To-Do List Running 🚀'));

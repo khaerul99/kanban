@@ -6,6 +6,9 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 # Tahap 2: Production (Nginx)
 FROM nginx:stable-alpine
 # Copy hasil build ke folder default Nginx
