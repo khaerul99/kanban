@@ -95,7 +95,7 @@ const formatDate = (date: string) => {
 
         <button
           @click="taskStore.removeTask(task.id)"
-          class="absolute cursor-pointer top-3 right-3 p-1.5 rounded-lg text-slate-600 hover:text-red-400 hover:bg-red-500/10 opacity-0 group-hover:opacity-100 transition-all"
+          class="absolute cursor-pointer top-3 right-3 p-1.5 rounded-lg transition-all text-red-500 opacity-100 lg:text-slate-600 lg:opacity-0 group-hover:opacity-100 hover:text-red-400 hover:bg-red-500/10"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +207,7 @@ const formatDate = (date: string) => {
 
             <button
               @click="handledeleteSubTask(sub.id)"
-              class="text-red-400 lg:text-slate-600 hover:text-red-400 opacity-0 group-hover/sub:opacity-100 transition-all p-1 cursor-pointer"
+              class="transition-all p-1 cursor-pointer text-red-500 opacity-100 lg:text-slate-600 lg:opacity-0 group-hover/sub:opacity-100 hover:text-red-400"
               title="Hapus item"
             >
               <svg

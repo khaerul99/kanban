@@ -35,7 +35,7 @@ const onMove = (evt: any) => {
     </div>
 
     <draggable 
-      :list="tasks" 
+      v-model="tasks" 
       group="tasks" 
       item-key="id"
       :animation="250"
@@ -64,10 +64,10 @@ const onMove = (evt: any) => {
 }
 
 .dragging-card {
-  opacity: 1 !important;
-  transform: rotate(2deg) scale(1.05);
-  cursor: grabbing;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+  position: fixed !important; 
+  z-index: 9999 !important; 
+  pointer-events: none !important; 
+  transform: scale(1.05) !important; 
 }
 
 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
