@@ -34,7 +34,8 @@ const handleAdd = () => {
           <input 
             type="date" 
             v-model="dueDate" 
-            class="w-full bg-slate-700/50 hover:bg-slate-700 text-[11px] text-slate-300 rounded-lg px-3 py-2.5 outline-none border border-slate-600 focus:border-sky-400 transition-all uppercase cursor-pointer"
+            placeholder="Due Date"
+            class="w-full bg-slate-700/50 hover:bg-slate-700 text-[11px] text-white rounded-lg px-3 py-2.5 outline-none border border-slate-600 focus:border-sky-400 transition-all uppercase cursor-pointer"
           />
         </div>
 

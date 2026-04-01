@@ -30,7 +30,7 @@ onMounted(() => {
 
       <div v-if="taskStore.isLoading" class="flex flex-col items-center justify-center py-20">
         <div class="w-10 h-10 border-4 border-sky-500/20 border-t-sky-500 rounded-full animate-spin"></div>
-        <p class="mt-4 text-slate-600 text-sm animate-pulse italic">Menghubungkan ke MongoDB...</p>
+        <p class="mt-4 text-slate-600 text-sm animate-pulse italic">Menghubungkan ... </p>
       </div>
 
       <div v-else class="flex flex-col lg:flex-row gap-8 lg:justify-center items-start overflow-x-hidden pb-10">
