@@ -36,7 +36,8 @@ const handleAdd = () => {
           <input
             type="date"
             v-model="dueDate"
-            class="w-full bg-slate-700/50 text-slate-200 text-xs rounded-lg px-3 py-2.5 outline-none border border-slate-600 appearance-none"
+            placeholder="Tanggal jatuh tempo"
+            class="w-full bg-slate-700/50 text-slate-200 placeholder:text-slate-100 text-xs rounded-lg px-3 py-2.5 outline-none border border-slate-600 appearance-none"
             style="min-width: 120px"
           />
         </div>
