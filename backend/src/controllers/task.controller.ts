@@ -26,7 +26,6 @@ export const addTask = async (req: Request, res: Response) => {
 export const updateTask = async (req: Request<{ id: string }>, res: Response) => {
   try {
     const { id } = req.params;
-    // req.body sekarang bisa berisi title, status, position, atau subtasks
     const updatedTask = await TaskService.updateTask(id, req.body);
     res.json(updatedTask);
   } catch (error) {
@@ -38,7 +37,6 @@ export const deleteTask = async (req: Request<{ id: string }>, res: Response) =>
   try {
     const { id } = req.params;
     await TaskService.deleteTask(id);
-    // 204 No Content adalah status yang tepat untuk delete sukses
     res.status(204).send(); 
   } catch (error) {
     res.status(500).json({ message: 'Error deleting task' });

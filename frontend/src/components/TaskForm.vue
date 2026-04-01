@@ -42,7 +42,6 @@ const handleAdd = () => {
             v-model="dueDate" 
             class="w-full bg-slate-800/80 border border-slate-700 rounded-xl pl-10 pr-4 py-3 text-xs font-bold text-sky-400 uppercase tracking-wider outline-none appearance-none cursor-pointer focus:border-sky-500"
           />
-          <span v-if="!dueDate" class="absolute left-10 top-1/2 -translate-y-1/2 text-[10px] text-slate-500 pointer-events-none uppercase font-bold">Set Deadline</span>
         </div>
 
         <button 
