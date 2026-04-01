@@ -35,7 +35,7 @@ Proyek ini menggunakan arsitektur modern yang memisahkan tanggung jawab antara F
 
 ### High-Level Architecture Diagram
 <p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=Architecture+Diagram+(White+Lines)" alt="Kanban App Architecture Diagram" width="100%">
+  <img width="1919" height="990" alt="Image" src="https://github.com/user-attachments/assets/d65eeb6c-ee06-4a61-a6b2-ef6402f0e7c2" />
 </p>
 
 ### Technologies Used
